@@ -4,7 +4,7 @@ import About from "../components/About";
 import Projects from "../components/Projects";
 import FeedbackForm from "../components/FeedbackForm";
 import Footer from "../components/Footer";
-import Contact from "../components/contact";
+import Contact from "../components/Contact";
 import Experience from "../components/Experince";
 import Skills from "../components/Skills";
 import StatsResume from "../components/StatsResume";
