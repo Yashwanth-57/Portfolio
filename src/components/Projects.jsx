@@ -3,7 +3,7 @@ import {
   FaGithub,
   FaExternalLinkAlt,
   FaServer,
-  FaCodeBranch,
+  FaBookOpen,
 } from "react-icons/fa";
 
 /* =========================
@@ -14,25 +14,17 @@ const featuredProjects = [
   {
     title: "Chat-Box Application",
     description:
-      "Real-time messaging platform supporting text, audio and video communication.",
-    tech: ["Node.js", "Socket.io", "WebRTC", "MongoDB"],
-    github:
-      "https://github.com/Yashwanth-57/Chat-application",
+      "Real-time communication platform supporting instant messaging, audio calls, and video calls using Socket.io and WebRTC.",
+    tech: ["React", "Node.js", "Socket.io", "WebRTC", "MongoDB"],
+    github: "https://github.com/Yashwanth-57/Chat-application",
     live: null,
+    status: "Source Code",
   },
-  {
-    title: "Smart Helpdesk",
-    description:
-      "Role-based helpdesk platform with agent workflow and ticket management.",
-    tech: ["React", "Node.js", "MongoDB", "Docker"],
-    github:
-      "https://github.com/Yashwanth-57/Smart-Helpdesk-with-Agentic-Triage",
-    live: null,
-  },
+
   {
     title: "Kube Credential System",
     description:
-      "Microservice-based credential issuance and verification platform.",
+      "Event-driven microservices platform for credential issuance and verification using RabbitMQ, Docker, and TypeScript.",
     tech: [
       "Node.js",
       "TypeScript",
@@ -40,14 +32,99 @@ const featuredProjects = [
       "Docker",
       "MongoDB",
     ],
-    github:
-      "https://github.com/Yashwanth-57/Kube-Credential",
+    github: "https://github.com/Yashwanth-57/Kube-Credential",
     live: null,
+    status: "Source Code",
   },
+
+  {
+    title: "Smart Helpdesk",
+    description:
+      "Role-based ticket management platform with secure authentication, agent workflows, and scalable backend architecture.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Docker",
+    ],
+    github:
+      "https://github.com/Yashwanth-57/Smart-Helpdesk-with-Agentic-Triage",
+    live: null,
+    status: "Source Code",
+  },
+
+  {
+    title: "Demo Project",
+    description:
+      "Full-stack CRM platform for managing leads and tasks with JWT authentication, protected routes, and scalable REST APIs.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/Yashwanth-57/DemoProject",
+    live:
+      "https://demo-project-kf0aa6sc2-chegondi-yashwanths-projects.vercel.app",
+    status: "Production",
+  },
+
+  {
+    title: "Mini Event Platform",
+    description:
+      "Production-grade MERN event management platform featuring authentication, event CRUD, RSVP workflows, search, filters, and business rule validations.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redux",
+      "JWT",
+    ],
+    github: "https://github.com/Yashwanth-57/MiniEvent-project",
+    live: "https://mini-event-project.vercel.app",
+    status: "Production",
+  },
+
+  {
+    title: "Online Product Catalog",
+    description:
+      "Next.js application demonstrating SSG, SSR, ISR, and CSR rendering strategies with product management and optimized performance.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "MongoDB",
+    ],
+    github:
+      "https://github.com/Yashwanth-57/online-product-catalog",
+    live: "https://online-product-catalog.onrender.com",
+    status: "Production",
+  },
+
+  {
+    title: "Bills Tracker",
+    description:
+      "Dockerized MERN expense tracking application with Nginx, MongoDB Atlas integration, and containerized deployment architecture.",
+    tech: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Docker",
+      "Nginx",
+    ],
+    github: "https://github.com/Yashwanth-57/Bills-Tracker",
+    live: "https://bills-tracker-forntend.onrender.com",
+    status: "Production",
+  },
+
   {
     title: "GitHub Profile Analyzer API",
     description:
-      "Analyzes GitHub profiles and generates developer insights.",
+      "REST API that analyzes GitHub profiles and generates developer insights using GitHub APIs, Express.js, and MySQL.",
     tech: [
       "Node.js",
       "Express",
@@ -56,63 +133,39 @@ const featuredProjects = [
     ],
     github:
       "https://github.com/Yashwanth-57/GitHub-Profile-Analyzer-API",
-    live: null,
-  },
-  {
-    title: "Online Product Catalog",
-    description:
-      "Next.js rendering project using SSG, ISR, SSR and CSR.",
-    tech: ["Next.js", "TypeScript", "React"],
-    github:
-      "https://github.com/Yashwanth-57/online-product-catalog",
     live:
-      "https://online-product-catalog.onrender.com",
-  },
-  {
-    title: "Mini Event Platform",
-    description:
-      "MERN event platform with concurrency-safe RSVP system.",
-    tech: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node.js",
-    ],
-    github:
-      "https://github.com/Yashwanth-57/MiniEvent-project",
-    live:
-      "https://mini-event-project.vercel.app",
+      "https://github-profile-analyzer-api-bs55.onrender.com/",
+    status: "Production",
   },
 ];
 
 /* =========================
-   Deployments
+   Production Deployments
 ========================= */
 
 const deployments = [
-  "GitHub Profile Analyzer API",
-  "Demo Project",
-  "Online Product Catalog",
-  "Mini Event Platform",
-  "Bills Tracker Frontend",
-  "Bills Tracker Backend",
-];
-
-/* =========================
-   Repositories
-========================= */
-
-const repositories = [
-  "Inventory Billing System",
-  "Blogs Project",
-  "JWT Auth",
-  "Nest Backend Project",
-  "Homefy Interior",
-  "GitHub Repository Tracker API",
-  "Demo Project",
-  "Portfolio",
-  "SPA",
-  "School Project",
+  // {
+  //   name: "Demo Project",
+  //   link:
+  //     "https://demo-project-kf0aa6sc2-chegondi-yashwanths-projects.vercel.app",
+  // },
+  // {
+  //   name: "Mini Event Platform",
+  //   link: "https://mini-event-project.vercel.app",
+  // },
+  // {
+  //   name: "Online Product Catalog",
+  //   link: "https://online-product-catalog.onrender.com",
+  // },
+  // {
+  //   name: "Bills Tracker",
+  //   link: "https://bills-tracker-forntend.onrender.com",
+  // },
+  // {
+  //   name: "GitHub Profile Analyzer API",
+  //   link:
+  //     "https://github-profile-analyzer-api-bs55.onrender.com/",
+  // },
 ];
 
 export default function Projects() {
@@ -122,7 +175,6 @@ export default function Projects() {
       className="bg-zinc-950 text-zinc-50 py-32 px-6"
     >
       <div className="max-w-7xl mx-auto">
-
         {/* Heading */}
         <p className="uppercase tracking-[8px] text-zinc-500 text-sm">
           Projects
@@ -138,101 +190,125 @@ export default function Projects() {
 
         <div className="mt-24">
           <h3 className="text-3xl font-bold mb-12">
-            Featured Projects
+            Featured SaaS Products
           </h3>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {featuredProjects.map(
-              (project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{
-                    opacity: 0,
-                    y: 40,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                  }}
-                  transition={{
-                    duration: 0.7,
-                  }}
-                  whileHover={{
-                    y: -6,
-                  }}
-                  className="
-                    border border-zinc-800
-                    rounded-[32px]
-                    p-8
-                    bg-zinc-900/40
-                    hover:bg-zinc-900/70
-                    transition-all
-                  "
+            {featuredProjects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  duration: 0.7,
+                }}
+                whileHover={{
+                  y: -8,
+                }}
+                className="
+                  border border-zinc-800
+                  rounded-[32px]
+                  p-8
+                  bg-zinc-900/40
+                  hover:bg-zinc-900/70
+                  transition-all
+                "
+              >
+                {/* Status */}
+                <p
+                  className={`font-medium ${
+                    project.status === "Production"
+                      ? "text-green-400"
+                      : "text-yellow-400"
+                  }`}
                 >
-                  <h4 className="text-2xl font-bold">
-                    {project.title}
-                  </h4>
+                  ● {project.status}
+                </p>
 
-                  <p className="text-zinc-400 mt-5 leading-8">
-                    {project.description}
-                  </p>
+                <h4 className="text-3xl font-bold mt-5">
+                  {project.title}
+                </h4>
 
-                  <div className="flex flex-wrap gap-3 mt-8">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="
-                          border border-zinc-800
-                          px-4 py-2
-                          rounded-full
-                          text-sm
-                          text-zinc-300
-                        "
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <p className="text-zinc-400 mt-5 leading-8">
+                  {project.description}
+                </p>
 
-                  <div className="flex gap-6 mt-8">
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="
+                        border border-zinc-800
+                        px-4 py-2
+                        rounded-full
+                        text-sm
+                        text-zinc-300
+                      "
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Buttons */}
+                <div className="flex flex-wrap gap-6 mt-10">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="
+                      flex items-center gap-2
+                      text-blue-400
+                      hover:text-blue-300
+                      transition
+                    "
+                  >
+                    <FaGithub />
+                    GitHub
+                  </a>
+
+                  {project.live && (
                     <a
-                      href={project.github}
+                      href={project.live}
                       target="_blank"
                       rel="noreferrer"
                       className="
                         flex items-center gap-2
-                        text-zinc-400
-                        hover:text-white
+                        text-green-400
+                        hover:text-green-300
                         transition
                       "
                     >
-                      <FaGithub />
-                      GitHub
+                      <FaExternalLinkAlt />
+                      Live Demo
                     </a>
+                  )}
 
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="
-                          flex items-center gap-2
-                          text-zinc-400
-                          hover:text-white
-                          transition
-                        "
-                      >
-                        <FaExternalLinkAlt />
-                        Live
-                      </a>
-                    )}
-                  </div>
-                </motion.div>
-              )
-            )}
+                  {/* Future Detailed Page Tab */}
+                  <button
+                    className="
+                      flex items-center gap-2
+                      text-purple-400
+                      hover:text-purple-300
+                      transition
+                    "
+                  >
+                    <FaBookOpen />
+                    Project Details
+                  </button>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
 
@@ -240,7 +316,7 @@ export default function Projects() {
             DEPLOYMENTS
         ========================= */}
 
-        <div className="mt-32">
+        {/* <div className="mt-32">
           <h3 className="text-3xl font-bold mb-12">
             Production Deployments
           </h3>
@@ -248,7 +324,7 @@ export default function Projects() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {deployments.map((item) => (
               <div
-                key={item}
+                key={item.name}
                 className="
                   border border-zinc-800
                   rounded-[28px]
@@ -258,57 +334,37 @@ export default function Projects() {
                   transition-all
                 "
               >
-                <FaServer
-                  className="text-2xl text-zinc-300"
-                />
+                <FaServer className="text-2xl text-zinc-300" />
 
-                <h4 className="mt-6 text-xl font-bold">
-                  {item}
+                <p className="mt-6 text-green-400 font-medium">
+                  ● Production Live
+                </p>
+
+                <h4 className="mt-5 text-xl font-bold">
+                  {item.name}
                 </h4>
 
-                <p className="mt-4 text-green-400">
-                  ● Production
-                </p>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    mt-6
+                    text-green-400
+                    hover:text-green-300
+                    transition
+                  "
+                >
+                  <FaExternalLinkAlt />
+                  Visit App
+                </a>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* =========================
-            OTHER REPOSITORIES
-        ========================= */}
-
-        <div className="mt-32">
-          <h3 className="text-3xl font-bold mb-12">
-            Other Repositories
-          </h3>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {repositories.map((repo) => (
-              <div
-                key={repo}
-                className="
-                  border border-zinc-800
-                  rounded-3xl
-                  p-6
-                  bg-zinc-900/30
-                  hover:bg-zinc-900/60
-                  transition-all
-                  cursor-pointer
-                "
-              >
-                <FaCodeBranch
-                  className="text-zinc-400"
-                />
-
-                <p className="mt-5 text-zinc-200 font-medium">
-                  {repo}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
+        </div> */}
       </div>
     </section>
   );

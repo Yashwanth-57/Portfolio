@@ -276,9 +276,11 @@ export default function Contact() {
                 <p>✓ Full Stack Engineering Roles</p>
                 <p>✓ Backend Development Roles</p>
                 <p>✓ Node.js & Microservices Development</p>
+                <p>✓ Integrate LLM Models</p>
                 <p>✓ Freelance Projects</p>
                 <p>✓ Remote Opportunities</p>
                 <p>✓ Collaboration on Interesting Products</p>
+
               </div>
 
               {/* Stats */}
