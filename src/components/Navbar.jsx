@@ -10,8 +10,7 @@ export default function Navbar() {
     "experience",
     "projects",
     "skills",
-    "building",
-    "contact",
+      "contact",
   ];
 
   return (
