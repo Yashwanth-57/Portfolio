@@ -9,13 +9,19 @@ import Experience from "../components/Experince";
 import Skills from "../components/Skills";
 import StatsResume from "../components/StatsResume";
 import ParticlesBackground from "../components/ParticularBackground";
-import Cursor from "../components/Cursor";
+import CurrentlyBuilding from "../components/FeedbackForm";
+import BackgroundEffects from "../components/BackgroundEffects";
+
+
 
 export default function Home() {
   return (
     <>
-    <ParticlesBackground />
-        <Cursor />
+     <div className="bg-zinc-950 text-zinc-50 relative overflow-x-hidden">
+
+      <BackgroundEffects />
+
+      <div className="relative z-10">
       <Navbar />
       <Hero />
        <About />
@@ -23,11 +29,14 @@ export default function Home() {
     
       <Projects />
         <Skills/>
-        <StatsResume />
-      <FeedbackForm />
+        {/* <StatsResume /> */}
+      {/* <FeedbackForm /> */}
+      {/* <CurrentlyBuilding /> */}
       <Contact />
 
       <Footer />
+      </div>
+      </div>
     </>
   );
 }

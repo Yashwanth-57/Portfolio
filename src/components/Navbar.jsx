@@ -1,81 +1,115 @@
+import { useState } from "react";
 import { Link } from "react-scroll";
+import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const links = [
+    "about",
+    "experience",
+    "projects",
+    "skills",
+    "building",
+    "contact",
+  ];
+
   return (
-    <nav className="fixed top-0 w-full backdrop-blur-xl bg-white/5 border-b border-white/10 z-50 transition-all duration-300">
-      <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <nav
+      className="
+        fixed top-0 left-0 w-full
+        bg-zinc-950/80
+        backdrop-blur-md
+        border-b border-zinc-900
+        z-50
+      "
+    >
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-2xl md:text-3xl font-bold tracking-wide text-purple-400 hover:text-pink-400 transition-colors">
+        <Link
+          to="hero"
+          smooth
+          duration={500}
+          className="
+            text-2xl
+            font-black
+            text-zinc-50
+            cursor-pointer
+            tracking-tight
+          "
+        >
           Yashwanth.dev
-        </h1>
+        </Link>
 
-        {/* Nav Links */}
-        <div className="space-x-6 hidden md:flex">
-          <Link
-            to="about"
-            smooth
-            duration={500}
-            className="cursor-pointer text-white/80 hover:text-purple-400 transition-colors font-medium"
-          >
-            About
-          </Link>
-
-          <Link
-            to="experience"
-            smooth
-            duration={500}
-            className="cursor-pointer text-white/80 hover:text-purple-400 transition-colors font-medium"
-          >
-            Experience
-          </Link>
-
-          <Link
-            to="projects"
-            smooth
-            duration={500}
-            className="cursor-pointer text-white/80 hover:text-purple-400 transition-colors font-medium"
-          >
-            Projects
-          </Link>
-
-          <Link
-            to="feedback"
-            smooth
-            duration={500}
-            className="cursor-pointer text-white/80 hover:text-purple-400 transition-colors font-medium"
-          >
-            Feedback
-          </Link>
-
-          <Link
-            to="contact"
-            smooth
-            duration={500}
-            className="cursor-pointer text-white/80 hover:text-purple-400 transition-colors font-medium"
-          >
-            Contact
-          </Link>
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-10">
+          {links.map((link) => (
+            <Link
+              key={link}
+              to={link}
+              smooth
+              duration={500}
+              offset={-80}
+              spy
+              activeClass="text-white"
+              className="
+                cursor-pointer
+                text-zinc-400
+                hover:text-zinc-50
+                transition
+                capitalize
+              "
+            >
+              {link}
+            </Link>
+          ))}
         </div>
 
-        {/* Mobile Menu Icon */}
-        <div className="md:hidden text-white cursor-pointer">
-          {/* You can add hamburger icon and mobile dropdown later */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 hover:text-purple-400 transition-colors"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </div>
+        {/* Mobile Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="
+            md:hidden
+            text-zinc-50
+            text-3xl
+          "
+        >
+          {isOpen ? <HiX /> : <HiMenu />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div
+          className="
+            md:hidden
+            border-t border-zinc-900
+            bg-zinc-950
+          "
+        >
+          <div className="flex flex-col py-6 px-6 gap-6">
+            {links.map((link) => (
+              <Link
+                key={link}
+                to={link}
+                smooth
+                duration={500}
+                offset={-80}
+                onClick={() => setIsOpen(false)}
+                className="
+                  cursor-pointer
+                  text-zinc-400
+                  hover:text-white
+                  transition
+                  capitalize
+                "
+              >
+                {link}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

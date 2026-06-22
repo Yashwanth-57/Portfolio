@@ -1,129 +1,124 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaStar } from "react-icons/fa";
-import Particles from "./Particles";
 
-export default function Feedback() {
-  // State for user input
-  const [form, setForm] = useState({ name: "", message: "", rating: 5 });
-  const [hover, setHover] = useState(null);
+const building = [
+  {
+    title: "Real-Time Chat Application",
+    description:
+      "Building a production-ready chat platform supporting text, audio, and video communication using WebRTC and Socket.io.",
+    tech: [
+      "Node.js",
+      "Socket.io",
+      "WebRTC",
+      "MongoDB",
+    ],
+  },
+  {
+    title: "Credential System (Microservices)",
+    description:
+      "Designing a distributed credential issuance and verification platform using asynchronous communication and idempotent operations.",
+    tech: [
+      "Node.js",
+      "RabbitMQ",
+      "Docker",
+      "MongoDB",
+      "TypeScript",
+    ],
+  },
+  {
+    title: "Production Backend Systems",
+    description:
+      "Exploring scalable backend architecture, secure authentication, cloud deployments, and real-time systems.",
+    tech: [
+      "AWS EC2",
+      "Redis",
+      "JWT",
+      "Docker",
+      "Microservices",
+    ],
+  },
+];
 
-  // State for all feedbacks (initial pre-loaded reviews)
-  const [feedbacks, setFeedbacks] = useState([
-    {
-      name: "John Doe",
-      rating: 5,
-      message:
-        "Yashwanth's portfolio is incredible! Super clean, animated, and professional.",
-    },
-    {
-      name: "Jane Smith",
-      rating: 4,
-      message:
-        "Highly skilled full-stack developer. His projects are optimized and visually stunning!",
-    },
-  ]);
-
-  // Submit handler
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFeedbacks([form, ...feedbacks]); // Add new review at top
-    setForm({ name: "", message: "", rating: 5 });
-  };
-
+export default function CurrentlyBuilding() {
   return (
     <section
-      id="feedback"
-      className="min-h-screen px-6 py-24 flex flex-col items-center bg-gradient-to-b from-[#050816] to-[#0f172a]"
+      id="building"
+      className="bg-zinc-950 text-zinc-50 py-32 px-6"
     >
-              {/* className="min-h-screen flex items-center px-6 py-28 bg-gradient-to-b from-[#050816] to-[#0f172a] relative overflow-hidden" */}
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="uppercase tracking-[8px] text-zinc-500 text-sm">
+            Currently Building
+          </p>
 
-        <Particles count={30} color="bg-pink-500/30" />
-      <motion.h2
-        className="text-4xl md:text-5xl font-bold text-white mb-12"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        ⭐ Give & See Feedback ⭐
-      </motion.h2>
+          <h2 className="text-5xl md:text-7xl font-black mt-6 leading-tight">
+            Exploring modern
+            <br />
+            backend systems.
+          </h2>
 
-      {/* Feedback Form */}
-      <motion.form
-        onSubmit={handleSubmit}
-        className="w-full max-w-xl bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-2xl mb-12 shadow-lg"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className="w-full mb-4 p-3 border rounded bg-white/10 text-white placeholder-gray-300"
-          required
-        />
+          <p className="text-zinc-400 text-lg mt-8 max-w-3xl leading-8">
+            I enjoy building scalable applications,
+            experimenting with distributed systems,
+            and solving real-world engineering problems.
+          </p>
+        </motion.div>
 
-        <textarea
-          placeholder="Your Message"
-          value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-          className="w-full mb-4 p-3 border rounded bg-white/10 text-white placeholder-gray-300"
-          required
-        />
+        {/* Cards */}
+        <div className="mt-20 space-y-8">
+          {building.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.1,
+              }}
+              className="
+                border border-zinc-800
+                rounded-[32px]
+                p-8 md:p-10
+                bg-zinc-900/40
+                hover:bg-zinc-900/70
+                transition
+              "
+            >
+              <h3 className="text-3xl font-bold">
+                {item.title}
+              </h3>
 
-        {/* Star Rating */}
-        <div className="flex mb-4">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <FaStar
-              key={star}
-              className={`text-2xl cursor-pointer ${
-                (hover || form.rating) >= star ? "text-yellow-400" : "text-gray-500"
-              }`}
-              onClick={() => setForm({ ...form, rating: star })}
-              onMouseEnter={() => setHover(star)}
-              onMouseLeave={() => setHover(null)}
-            />
+              <p className="text-zinc-400 text-lg mt-5 leading-8">
+                {item.description}
+              </p>
+
+              <div className="flex flex-wrap gap-3 mt-8">
+                {item.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="
+                      px-4 py-2
+                      border border-zinc-800
+                      rounded-full
+                      text-zinc-300
+                      text-sm
+                      hover:bg-zinc-800
+                      transition
+                    "
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
-
-        <button
-          type="submit"
-          className="w-full bg-purple-600 hover:bg-purple-500 text-white p-3 rounded-full transition shadow-lg"
-        >
-          Submit Feedback
-        </button>
-      </motion.form>
-
-      {/* Display Reviews */}
-      <div className="flex flex-wrap justify-center gap-8 w-full max-w-6xl">
-        {feedbacks.map((fb, idx) => (
-          <motion.div
-            key={idx}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 w-full md:w-80 hover:scale-105 transition-transform shadow-lg"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
-          >
-            {/* Stars */}
-            <div className="flex mb-4">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <FaStar
-                  key={star}
-                  className={`${
-                    star <= fb.rating ? "text-yellow-400 animate-pulse" : "text-gray-500"
-                  }`}
-                />
-              ))}
-            </div>
-
-            <p className="text-gray-300 mb-4">{fb.message}</p>
-            <h3 className="text-white font-semibold">{fb.name}</h3>
-          </motion.div>
-        ))}
       </div>
     </section>
   );

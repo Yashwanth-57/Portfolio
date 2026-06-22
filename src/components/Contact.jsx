@@ -1,67 +1,140 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import Particles from "./Particles";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaArrowRight,
+} from "react-icons/fa";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center px-6 py-28 relative overflow-hidden"
+      className="bg-zinc-950 text-zinc-50 py-32 px-6"
     >
-        <Particles count={30} color="bg-pink-500/30" />
-      {/* Glowing Background */}
-      <div className="absolute w-[500px] h-[500px] bg-pink-500/20 blur-[180px] bottom-[-150px] right-[-200px] rounded-full animate-pulse"></div>
+      <div className="max-w-7xl mx-auto">
 
-      <motion.div
-        className="max-w-4xl mx-auto text-center z-10"
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-5xl font-bold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-          Get In Touch
-        </h2>
-
-        <p className="text-gray-300 mb-10 text-lg">
-          Open to freelance, full-time, and collaboration opportunities.
-        </p>
-
-        {/* Social Icons */}
-        <div className="flex justify-center gap-8 text-3xl mb-10">
-          <a
-            href="https://github.com/Yashwanth-57"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-purple-400 transition"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/in/chegondi-yashwanth-814939275"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-purple-400 transition"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="mailto:567yashwanth@gmail.com"
-            className="hover:text-purple-400 transition"
-          >
-            <FaEnvelope />
-          </a>
-        </div>
-
-        {/* Resume Button */}
-        <a
-          href="https://www.overleaf.com/download/project/69520647cca7d5b1217b2077/build/19c73779969-2ecd2255e81e02b4/output/output.pdf?compileGroup=standard&clsiserverid=clsi-pre-emp-c3d-d-f-cg1m&enable_pdf_caching=true&popupDownload=true&editorId=1ee4f58e-42d5-4500-9ef0-8448ac538355"
-          target="_blank"
-          className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full shadow-lg shadow-purple-600/40 hover:scale-105 transition"
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
         >
-          Download Resume
-        </a>
-      </motion.div>
+          {/* Small Heading */}
+          <p className="uppercase tracking-[8px] text-zinc-500 text-sm">
+            Contact
+          </p>
+
+          {/* Main Heading */}
+          <h2 className="text-5xl md:text-7xl font-black mt-6 leading-tight">
+            Let's build
+            <br />
+            something great.
+          </h2>
+
+          {/* Description */}
+          <p className="text-zinc-400 text-xl mt-8 max-w-3xl leading-9">
+            I'm currently open to software engineering,
+            full-stack, backend development, and
+            collaboration opportunities. Feel free to
+            reach out if you'd like to work together or
+            discuss interesting projects.
+          </p>
+
+          {/* Contact Links */}
+          <div className="mt-16 flex flex-col gap-6">
+
+            <a
+              href="mailto:567yashwanth@gmail.com"
+              className="
+                flex items-center gap-4
+                text-zinc-300
+                hover:text-white
+                transition
+                w-fit
+              "
+            >
+              <FaEnvelope className="text-2xl" />
+              <span className="text-lg">
+                567yashwanth@gmail.com
+              </span>
+            </a>
+
+            <a
+              href="https://github.com/Yashwanth-57"
+              target="_blank"
+              rel="noreferrer"
+              className="
+                flex items-center gap-4
+                text-zinc-300
+                hover:text-white
+                transition
+                w-fit
+              "
+            >
+              <FaGithub className="text-2xl" />
+              <span className="text-lg">
+                github.com/Yashwanth-57
+              </span>
+            </a>
+
+            <a
+              href="https://linkedin.com/in/chegondi-yashwanth-814939275"
+              target="_blank"
+              rel="noreferrer"
+              className="
+                flex items-center gap-4
+                text-zinc-300
+                hover:text-white
+                transition
+                w-fit
+              "
+            >
+              <FaLinkedin className="text-2xl" />
+              <span className="text-lg">
+                linkedin.com/in/chegondi-yashwanth-814939275
+              </span>
+            </a>
+
+          </div>
+
+          {/* Resume Button */}
+          <div className="mt-16">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="
+                inline-flex
+                items-center
+                gap-3
+                px-8
+                py-4
+                bg-white
+                text-black
+                rounded-full
+                font-semibold
+                hover:scale-105
+                transition
+              "
+            >
+              Download Resume
+              <FaArrowRight />
+            </a>
+          </div>
+        </motion.div>
+
+      </div>
     </section>
   );
 }

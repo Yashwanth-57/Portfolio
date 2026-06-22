@@ -1,52 +1,99 @@
 import { motion } from "framer-motion";
 
+const achievements = [
+  "Developed scalable full-stack applications using React.js, Node.js, Express.js and MongoDB",
+  "Designed and implemented RESTful APIs, authentication systems (JWT, RBAC), and reusable backend architectures.",
+  "Developed microservices and event-driven systems using RabbitMQ and Docker.",
+  "Integrated frontend applications with backend services using Redux and Redux Saga.",
+  "Implemented production-grade features including validation, file uploads, rate limiting, and error handling.",
+"Developed browser automation and web data extraction solutions using Puppeteer, integrated with Chrome Extensions and Electron.js desktop applications." 
+];
+
 export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 overflow-hidden"
+      className="bg-zinc-950 text-zinc-50 py-32 px-6"
     >
-      {/* Background Glow */}
-      {/* <div className="absolute w-[500px] h-[500px] bg-purple-600/20 blur-[180px] top-[-200px] left-[-200px] rounded-full"></div> */}
-
-      <div className="relative max-w-6xl mx-auto">
-        <motion.h2
-          className="text-3xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: 60 }}
+      <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          Work Experience
-        </motion.h2>
+          <p className="uppercase tracking-[8px] text-zinc-500 text-sm">
+            Experience
+          </p>
 
-        {/* Timeline */}
-        <div className="relative border-l border-purple-500/30 pl-8 space-y-12">
+          <h2 className="text-5xl md:text-7xl font-black mt-6 leading-tight">
+            Building scalable
+            <br />
+            software systems.
+          </h2>
+        </motion.div>
 
-          {/* Job Card */}
-          <motion.div
-            className="relative bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-white/10 hover:border-purple-500 transition"
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="absolute -left-[41px] top-6 w-6 h-6 bg-purple-500 rounded-full border-4 border-[#050816]"></span>
+        {/* Experience Card */}
+        <motion.div
+          className="
+            mt-20
+            border border-zinc-800
+            rounded-[40px]
+            p-10 md:p-14
+            bg-zinc-900/40
+          "
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
+            {/* Left Side */}
+            <div className="lg:w-[30%]">
+              <h3 className="text-3xl font-bold">
+                Software Developer Intern
+              </h3>
 
-            <h3 className="text-xl md:text-2xl font-semibold text-purple-400">
-              Software Developer Intern
-            </h3>
-            <p className="text-gray-400 text-sm mt-1">
-              Tek Tree LLC • Jan 2026 – Present • On Site
-            </p>
+              <p className="text-zinc-300 mt-4 text-lg">
+                Tek Tree LLC
+              </p>
 
-            <ul className="mt-4 space-y-2 text-gray-300 text-sm md:text-base">
-              <li>• Built full-stack JavaScript application from scratch.</li>
-              <li>• Designed scalable REST APIs with secure architecture.</li>
-              <li>• Deployed & managed apps on AWS EC2 (Linux).</li>
-              <li>• Debugged production issues & improved performance.</li>
-            </ul>
-          </motion.div>
+              <p className="text-zinc-500 mt-4">
+                Jan 2026 — Present
+              </p>
 
-        </div>
+              <p className="text-zinc-500">
+                Hyderabad, Telangana, India
+              </p>
+            </div>
+
+            {/* Right Side */}
+            <div className="lg:w-[70%]">
+              <p className="text-zinc-400 text-lg leading-8">
+                Working on full-stack applications, distributed systems,
+                real-time communication platforms, and production-grade
+                backend services while gaining hands-on experience in modern
+                software engineering practices.
+              </p>
+
+              <div className="mt-10 space-y-6">
+                {achievements.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex gap-4 items-start"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-zinc-300 mt-3 flex-shrink-0" />
+
+                    <p className="text-zinc-300 leading-7">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

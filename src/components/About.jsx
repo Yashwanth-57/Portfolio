@@ -1,79 +1,119 @@
 import { motion } from "framer-motion";
 
+const stats = [
+  {
+    title: "Experience",
+    value: "1+ Years",
+  },
+  {
+    title: "Projects",
+    value: "8+",
+  },
+  {
+    title: "Tech Stack",
+    value: "MERN + Cloud",
+  },
+  {
+    title: "Current Role",
+    value: "Software Developer Intern",
+  },
+];
+
+const skills = [
+  "Node.js",
+  "React.js",
+  "Next.js",
+  "MongoDB",
+  "Docker",
+  "AWS",
+  "Redis",
+  "Microservices",
+];
+
 export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex -center px-6 py-28  relative overflow-hidden"
+      className="bg-zinc-950 text-zinc-50 py-32 px-6"
     >
+      <div className="max-w-7xl mx-auto">
 
-      {/* Floating Blurs & Shapes */}
-      <div className="absolute w-[400px] h-[400px] bg-purple-600/20 blur-[180px] top-[-100px] left-[-150px] rounded-full animate-pulse"></div>
-      <div className="absolute w-[300px] h-[300px] bg-pink-500/20 blur-[150px] bottom-[-100px] right-[-100px] rounded-full animate-pulse"></div>
-      <div className="absolute w-[200px] h-[200px] bg-indigo-500/10 blur-[120px] top-[50%] left-[10%] rounded-full animate-pulse"></div>
-
-      <motion.div
-        className="max-w-5xl mx-auto text-center text-white z-10"
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <motion.h2
-          className="text-5xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          About Me
-        </motion.h2>
-
-        {/* Animated Paragraphs */}
-        <motion.p
-          className="text-gray-300 text-lg leading-relaxed mb-6"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          I'm a Full Stack Developer with strong expertise in Node.js,
-          microservices, real-time systems, and cloud deployments. Currently
-          working as a Software Developer Intern at Tek Tree LLC, building
-          production-ready applications from scratch — frontend UI, backend
-          APIs, database design, and AWS EC2 deployments.
-        </motion.p>
-
-        <motion.p
-          className="text-gray-300 text-lg leading-relaxed"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          I focus on scalable architecture, secure authentication systems,
-          REST API design, Dockerized deployments, and debugging real-world
-          production issues to improve reliability and performance.
-        </motion.p>
-
-        {/* Skills Icons / Badges */}
+        {/* Heading */}
         <motion.div
-          className="mt-12 flex flex-wrap justify-center gap-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          {["Node.js", "React.js", "Docker", "AWS EC2", "Microservices"].map(
-            (skill, i) => (
-              <motion.span
-                key={i}
-                className="px-4 py-2 rounded-full bg-purple-600/30 backdrop-blur-md text-white font-semibold text-sm hover:scale-110 transition-transform cursor-pointer"
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3 }}
-              >
-                {skill}
-              </motion.span>
-            )
-          )}
+          <p className="uppercase tracking-[8px] text-zinc-500 text-sm">
+            About
+          </p>
+
+          <h2 className="mt-6 text-5xl md:text-7xl font-black leading-tight">
+            I build scalable web applications,
+            <br />
+            microservices, and real-time systems.
+          </h2>
         </motion.div>
-      </motion.div>
+
+        {/* Stats */}
+        <div className="grid md:grid-cols-4 gap-6 mt-20">
+          {stats.map((item) => (
+            <div
+              key={item.title}
+              className="border border-zinc-800 rounded-3xl p-8 bg-zinc-900/40"
+            >
+              <p className="text-zinc-500 text-sm">
+                {item.title}
+              </p>
+
+              <h3 className="text-2xl font-bold mt-3">
+                {item.value}
+              </h3>
+            </div>
+          ))}
+        </div>
+
+        {/* Bio */}
+        <div className="max-w-4xl mt-20">
+          <p className="text-xl text-zinc-400 leading-9">
+            I'm a Full Stack Developer with expertise in
+            Node.js, React, microservices, real-time systems,
+            and cloud deployments. Currently working as a
+            Software Developer Intern at Tek Tree LLC,
+            building production-ready applications from
+            frontend interfaces to backend APIs, database
+            architecture, and AWS deployments.
+
+            <br />
+            <br />
+
+            I enjoy designing scalable systems, implementing
+            secure authentication, debugging production
+            issues, and delivering reliable software that
+            solves real-world problems.
+          </p>
+        </div>
+
+        {/* Skills */}
+        <div className="flex flex-wrap gap-4 mt-16">
+          {skills.map((skill) => (
+            <div
+              key={skill}
+              className="
+                px-5 py-3
+                border border-zinc-800
+                rounded-full
+                text-zinc-300
+                hover:bg-zinc-900
+                transition
+              "
+            >
+              {skill}
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,58 +1,104 @@
 import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa";
+
+const stats = [
+  {
+    value: "8+",
+    label: "Production Projects",
+  },
+  {
+    value: "3+",
+    label: "Live Deployments",
+  },
+  {
+    value: "10+",
+    label: "Technologies",
+  },
+  {
+    value: "100%",
+    label: "Engineering Mindset",
+  },
+];
 
 export default function StatsResume() {
-  const stats = [
-    { label: "Projects", value: 12 },
-    { label: "Years of Experience", value: 1 },
-    { label: "Clients", value: 5 },
-    { label: "Live Deployments", value: 3 }
-  ];
-
   return (
     <section
-      id="stats"
-      className="relative py-28  overflow-hidden px-4"
+      id="resume"
+      className="bg-zinc-950 text-zinc-50 py-32 px-6"
     >
-      {/* Parallax Background Blobs */}
-      <div className="absolute w-[500px] h-[500px] bg-purple-600/20 blur-[180px] top-[-150px] left-[-200px] rounded-full animate-pulse"></div>
-      <div className="absolute w-[400px] h-[400px] bg-pink-500/20 blur-[150px] bottom-[-100px] right-[-150px] rounded-full animate-pulse"></div>
+      <div className="max-w-7xl mx-auto">
 
-      <div className="relative max-w-6xl mx-auto text-center">
-        <motion.h2
-          className="text-3xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Stats & Resume
-        </motion.h2>
+        <p className="uppercase tracking-[8px] text-zinc-500 text-sm">
+          Achievements
+        </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          {stats.map((stat, i) => (
+        <h2 className="text-5xl md:text-7xl font-black mt-6">
+          Building software
+          <br />
+          that solves real problems.
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+          {stats.map((item) => (
             <motion.div
-              key={i}
-              className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-purple-500 transition"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
+              key={item.label}
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.7,
+              }}
+              className="
+                border
+                border-zinc-800
+                rounded-[32px]
+                p-8
+                bg-zinc-900/40
+              "
             >
-              <p className="text-4xl md:text-5xl font-bold text-purple-400">
-                {stat.value}+
+              <h3 className="text-5xl font-black">
+                {item.value}
+              </h3>
+
+              <p className="text-zinc-400 mt-4">
+                {item.label}
               </p>
-              <p className="text-gray-300 mt-2">{stat.label}</p>
             </motion.div>
           ))}
         </div>
 
-        <motion.a
-          href="https://www.overleaf.com/download/project/69520647cca7d5b1217b2077/build/19c73779969-2ecd2255e81e02b4/output/output.pdf?compileGroup=standard&clsiserverid=clsi-pre-emp-c3d-d-f-cg1m&enable_pdf_caching=true&popupDownload=true&editorId=1ee4f58e-42d5-4500-9ef0-8448ac538355"
-          target="_blank"
-          className="inline-block px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full shadow-lg shadow-purple-600/40 hover:scale-105 transition"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Download Resume
-        </motion.a>
+        {/* Resume Button */}
+        <div className="mt-20">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            className="
+              inline-flex
+              items-center
+              gap-3
+              px-8
+              py-4
+              bg-white
+              text-black
+              rounded-full
+              font-semibold
+              hover:scale-105
+              transition
+            "
+          >
+            Download Resume
+            <FaArrowRight />
+          </a>
+        </div>
+
       </div>
     </section>
   );
