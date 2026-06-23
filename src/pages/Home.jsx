@@ -11,6 +11,7 @@ import StatsResume from "../components/StatsResume";
 import ParticlesBackground from "../components/ParticularBackground";
 import CurrentlyBuilding from "../components/FeedbackForm";
 import BackgroundEffects from "../components/BackgroundEffects";
+import EducationCoding from "../components/EducationalCoding";
 
 
 
@@ -25,10 +26,12 @@ export default function Home() {
       <Navbar />
       <Hero />
        <About />
-         <Experience />
-    
+       <Skills/>
+       
+      <Experience />
       <Projects />
-        <Skills/>
+      <EducationCoding />
+        
         {/* <StatsResume /> */}
       {/* <FeedbackForm /> */}
       {/* <CurrentlyBuilding /> */}

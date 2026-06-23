@@ -7,10 +7,12 @@ export default function Navbar() {
 
   const links = [
     "about",
+    "skills",
     "experience",
     "projects",
-    "skills",
-      "contact",
+    
+    "educationcoding",
+    "contact",
   ];
 
   return (
@@ -27,8 +29,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="hero"
-          smooth
+          smooth={true}
           duration={500}
+          offset={-80}
           className="
             text-2xl
             font-black
@@ -40,26 +43,28 @@ export default function Navbar() {
           Yashwanth.dev
         </Link>
 
-        {/* Desktop Links */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10">
           {links.map((link) => (
             <Link
               key={link}
               to={link}
-              smooth
+              smooth={true}
+              spy={true}
               duration={500}
               offset={-80}
-              spy
-              activeClass="text-white"
+              activeClass="text-white border-b border-cyan-400 pb-1"
               className="
                 cursor-pointer
                 text-zinc-400
                 hover:text-zinc-50
-                transition
+                transition-all
                 capitalize
               "
             >
-              {link}
+              {link === "educationcoding"
+                ? "Education & Coding"
+                : link}
             </Link>
           ))}
         </div>
@@ -91,19 +96,23 @@ export default function Navbar() {
               <Link
                 key={link}
                 to={link}
-                smooth
+                smooth={true}
+                spy={true}
                 duration={500}
                 offset={-80}
                 onClick={() => setIsOpen(false)}
+                activeClass="text-white"
                 className="
                   cursor-pointer
                   text-zinc-400
                   hover:text-white
-                  transition
+                  transition-all
                   capitalize
                 "
               >
-                {link}
+                {link === "educationcoding"
+                  ? "Education & Coding"
+                  : link}
               </Link>
             ))}
           </div>

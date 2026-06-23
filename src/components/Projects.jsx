@@ -5,7 +5,7 @@ import {
   FaServer,
   FaBookOpen,
 } from "react-icons/fa";
-
+ import { Link } from "react-router-dom";
 /* =========================
    Featured Projects
 ========================= */
@@ -19,6 +19,7 @@ const featuredProjects = [
     github: "https://github.com/Yashwanth-57/Chat-application",
     live: null,
     status: "Source Code",
+    slug:"chat-box"
   },
 
   {
@@ -87,6 +88,7 @@ const featuredProjects = [
     github: "https://github.com/Yashwanth-57/MiniEvent-project",
     live: "https://mini-event-project.vercel.app",
     status: "Production",
+    slug: "mini-event-platform"
   },
 
   {
@@ -303,8 +305,24 @@ export default function Projects() {
                       transition
                     "
                   >
-                    <FaBookOpen />
-                    Project Details
+                   
+
+                   
+
+<Link
+  to={`/projects/${project.slug}`}
+  className="
+    flex items-center gap-2
+    text-purple-400
+    hover:text-purple-300
+    transition
+  "
+>
+  <FaBookOpen />
+  Project Details
+</Link>
+
+
                   </button>
                 </div>
               </motion.div>
